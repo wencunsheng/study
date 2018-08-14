@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.wen.springboot.springbootmybatis.mapper")
-public class SpringbootMybatisApplication {
-
+@MapperScan("com.wen.springboot.mapper")
+public class Application
+{
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootMybatisApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

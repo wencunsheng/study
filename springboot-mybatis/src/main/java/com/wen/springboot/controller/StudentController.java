@@ -19,6 +19,15 @@ public class StudentController
         Student student = new Student();
         student.setAge("18");
         student.setName("12");
+        studentService.addStudent(student);
+        return "ok";
+    }
+    @RequestMapping("/hello")
+    public String hello()
+    {
+        Student student = new Student();
+        student.setAge("18");
+        student.setName("12");
 //        studentService.addStudent(student);
         return "ok";
     }
