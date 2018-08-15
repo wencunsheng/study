@@ -15,11 +15,10 @@ public class StudentController
     @Resource
     private IStudentService studentService;
     private Logger l = LoggerFactory.getLogger(this.getClass());
-
     @RequestMapping(value = "/index")
     public String index()
     {
-        l.info("666666666666666666666666666666666");
+        l.info("666666666666");
         Student student = new Student();
         student.setAge("18");
         student.setName("12");
