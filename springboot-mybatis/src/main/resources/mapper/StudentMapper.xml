@@ -4,4 +4,34 @@
     <insert id="add" parameterType="Student" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
        INSERT INTO student(name, age) VALUE (#{name}, #{age})
     </insert>
+
+    <select id="get" resultType="Student">
+        SELECT * FROM student WHERE id IN
+        <choose>
+            <when test="list != null">
+                <foreach collection="list" open="(" close=")" index="index" item="item" separator=",">
+                    #{item}
+                </foreach>
+            </when>
+            <otherwise>
+                ()
+            </otherwise>
+        </choose>
+
+    </select>
+
+    <select id="getMap" resultType="Student" parameterType="map">
+        SELECT * FROM student WHERE id IN
+        <choose>
+            <when test="qwe != null">
+                <foreach collection="qwe" open="(" close=")" index="index" item="item" separator=",">
+                    #{item}
+                </foreach>
+            </when>
+            <otherwise>
+                (2)
+            </otherwise>
+        </choose>
+
+    </select>
 </mapper>

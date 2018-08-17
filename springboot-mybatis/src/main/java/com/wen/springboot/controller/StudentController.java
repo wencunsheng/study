@@ -2,8 +2,10 @@ package com.wen.springboot.controller;
 
 import com.wen.springboot.domain.Student;
 import com.wen.springboot.service.IStudentService;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +14,9 @@ import javax.annotation.Resource;
 @RestController
 public class StudentController
 {
+    @Setter
+    @Value("${names}")
+    private String name;
     @Resource
     private IStudentService studentService;
     private Logger l = LoggerFactory.getLogger(this.getClass());
@@ -21,7 +26,7 @@ public class StudentController
         l.info("666666666666");
         Student student = new Student();
         student.setAge("18");
-        student.setName("12");
+        student.setName(name);
         studentService.addStudent(student);
         return "ok";
     }
