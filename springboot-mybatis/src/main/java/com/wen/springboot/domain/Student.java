@@ -1,14 +1,12 @@
 package com.wen.springboot.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import org.apache.ibatis.type.Alias;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Getter
-@Setter
 @Alias("Student")
-@ToString
+@Data
+@ConfigurationProperties(prefix = "com.wen.springboot.domain.Student")
 public class Student
 {
     private Long id;
