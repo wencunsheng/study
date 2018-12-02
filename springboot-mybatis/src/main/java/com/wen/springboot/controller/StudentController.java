@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@ConfigurationProperties(prefix = "my")
 public class StudentController {
     @Value("${names}")
     private String name;
