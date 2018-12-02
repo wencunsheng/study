@@ -23,6 +23,7 @@ import java.util.List;
 @RestController
 public class StudentController {
     //测试分支修改
+    //测试
     @Value("${names}")
     private String name;
     @Value("${age}")
