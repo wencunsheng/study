@@ -10,6 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource(value={"classpath:config.properties"}, encoding="UTF-8")
 public class Application
 {
+	//分支备注
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
